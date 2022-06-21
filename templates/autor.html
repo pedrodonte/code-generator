@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block content %}
+<div class="px-4 py-5 my-5 text-center">
+  <img
+    class="d-block mx-auto mb-4"
+    src="https://flask.palletsprojects.com/en/2.1.x/_images/flask-logo.png"
+    alt=""
+    width="72"
+  />
+  <h1 class="display-5 fw-bold">Prototipo</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">
+      Generador de Código fuente para desarrollo de aplicaciones con React
+    </p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Weena
+      </button>
+      <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+        Yupi!
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Weena</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Weenardo</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Weena
+        </button>
+        <button type="button" class="btn btn-primary">Weena</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block codigo_scripts %}
+<script>
+  $(window).on("load", function () {
+    console.log("Cargando pagina denerador de codigo");
+  });
+</script>
+{% endblock %}

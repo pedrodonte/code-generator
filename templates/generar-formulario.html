@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+
+<form method="post">
+  <div class="mb-3">
+    <label for="tipo_form" class="form-label">Tipo Formulario</label>
+    <select
+      class="form-select"
+      id="tipo_form"
+      name="tipo_form"
+      aria-label="Default select example"
+    >
+      <option value="H">Horizontal</option>
+      <option selected value="V">Vertical</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Entrada</label>
+    <div id="emailHelp" class="form-text">nombre_campo:tipo</div>
+    <textarea rows="4" cols="50" name="text_area_data" class="form-control">
+{{ request.form['text_area_data'] or text_area_data }}</textarea
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Generar</button>
+</form>
+
+<h3 class="mt-3">Resultado</h3>
+<hr />
+<pre><code class="language-javascript">
+{{react_generado}}
+
+{{react_manejadores}}</code></pre>
+<hr />
+
+<pre><code class="language-html">{{codigo_generado}}</code></pre>
+
+<hr />
+
+{{html_generado}}
+
+<hr />
+
+{% endblock %} {% block codigo_scripts %}
+<script>
+  $(window).on("load", function () {
+    console.log("Cargando pagina denerador de codigo");
+    $("#tipo_form").val("{{ request.form['tipo_form'] or tipo_form }}");
+  });
+</script>
+{% endblock %}
